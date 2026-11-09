@@ -115,6 +115,12 @@ type OlmConfig struct {
 	WatchdogExecutable string
 	WatchdogSubcommand []string
 	WatchdogLogFile    string
+
+	// Netstack runs the WireGuard device on a userspace TCP/IP stack instead
+	// of an OS TUN interface. olm then needs no privileges and changes no
+	// host interfaces, routes or DNS. Reach the tunnel through Olm.Net and
+	// Olm.ResolveAlias.
+	Netstack bool
 }
 
 type TunnelConfig struct {
